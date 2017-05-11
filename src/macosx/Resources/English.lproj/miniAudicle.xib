@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13F1712" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment version="1050" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <deployment version="1050" defaultVersion="1050" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -699,15 +699,15 @@ CA
         <window title="Virtual Machine" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="262" userLabel="VM Monitor" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="894" y="358" width="306" height="372"/>
+            <rect key="contentRect" x="894" y="358" width="306" height="429"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <value key="minSize" type="size" width="250" height="294"/>
-            <view key="contentView" id="263">
-                <rect key="frame" x="0.0" y="0.0" width="306" height="372"/>
+            <view key="contentView" wantsLayer="YES" id="263">
+                <rect key="frame" x="0.0" y="0.0" width="306" height="429"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" id="280">
-                        <rect key="frame" x="54" y="12" width="194" height="32"/>
+                        <rect key="frame" x="54" y="13" width="194" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                         <buttonCell key="cell" type="push" title="Start Virtual Machine" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="1293">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -721,11 +721,11 @@ CA
                         <rect key="frame" x="20" y="58" width="266" height="238"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="Pzf-RP-xP2">
-                            <rect key="frame" x="1" y="17" width="264" height="220"/>
+                            <rect key="frame" x="1" y="17" width="253" height="220"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" autosaveColumns="NO" rowHeight="15" headerView="1365" id="285">
-                                    <rect key="frame" x="0.0" y="0.0" width="264.5" height="17"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="253" height="220"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -804,16 +804,16 @@ CA
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="1363">
-                            <rect key="frame" x="251" y="17" width="14" height="220"/>
+                            <rect key="frame" x="254" y="17" width="11" height="220"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" id="1365">
-                            <rect key="frame" x="0.0" y="0.0" width="264" height="17"/>
+                            <rect key="frame" x="0.0" y="0.0" width="253" height="17"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
                     <textField verticalHuggingPriority="750" id="291">
-                        <rect key="frame" x="17" y="338" width="188" height="14"/>
+                        <rect key="frame" x="17" y="395" width="188" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" selectable="YES" sendsActionOnEndEditing="YES" title="running time:" id="1294">
                             <font key="font" metaFont="smallSystem"/>
@@ -822,7 +822,7 @@ CA
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="293">
-                        <rect key="frame" x="17" y="316" width="46" height="14"/>
+                        <rect key="frame" x="17" y="373" width="46" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" selectable="YES" sendsActionOnEndEditing="YES" id="1295">
                             <font key="font" metaFont="smallSystem"/>
@@ -833,7 +833,7 @@ CA
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="881">
-                        <rect key="frame" x="98" y="338" width="107" height="14"/>
+                        <rect key="frame" x="98" y="395" width="107" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="1296">
                             <font key="font" metaFont="smallSystem"/>
@@ -842,7 +842,7 @@ CA
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="884">
-                        <rect key="frame" x="65" y="316" width="140" height="14"/>
+                        <rect key="frame" x="65" y="373" width="140" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" selectable="YES" sendsActionOnEndEditing="YES" id="1297">
                             <font key="font" metaFont="smallSystem"/>
@@ -850,10 +850,10 @@ CA
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button id="1277">
-                        <rect key="frame" x="210" y="333" width="76" height="19"/>
+                    <button verticalHuggingPriority="750" id="1277">
+                        <rect key="frame" x="210" y="389" width="76" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="Remove Last" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="1298">
+                        <buttonCell key="cell" type="smallSquare" title="Remove Last" bezelStyle="smallSquare" alignment="center" borderStyle="border" inset="2" id="1298">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -861,10 +861,10 @@ CA
                             <action selector="removeLastShred:" target="331" id="1279"/>
                         </connections>
                     </button>
-                    <button id="1278">
-                        <rect key="frame" x="210" y="304" width="76" height="19"/>
+                    <button verticalHuggingPriority="750" id="1278">
+                        <rect key="frame" x="210" y="360" width="76" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="Clear VM" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="1299">
+                        <buttonCell key="cell" type="smallSquare" title="Clear VM" bezelStyle="smallSquare" alignment="center" borderStyle="border" inset="2" id="1299">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -872,6 +872,48 @@ CA
                             <action selector="clearVM:" target="331" id="mQG-hC-7ig"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" id="f6d-A4-E3M">
+                        <rect key="frame" x="27" y="306" width="46" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="WTF" bezelStyle="smallSquare" alignment="center" borderStyle="border" inset="2" id="CgY-GA-4ix">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="logWTF:" target="331" id="mVp-Fl-Kfz"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="bGE-G9-ZTM">
+                        <rect key="frame" x="89" y="305" width="92" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="Awesome!" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="13o-gh-2zC">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="logAwesome:" target="331" id="oWV-bc-Oeu"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="8Fs-gb-O0k">
+                        <rect key="frame" x="199" y="306" width="77" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="Boring.." bezelStyle="smallSquare" alignment="center" borderStyle="border" baseWritingDirection="leftToRight" imageScaling="proportionallyDown" inset="2" id="ia5-oV-qIX">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="logBoring:" target="331" id="xoU-7I-dNt"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="jms-RS-E2P">
+                        <rect key="frame" x="18" y="334" width="43" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="React:" id="BHe-PU-uTt">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <connections>
@@ -881,6 +923,8 @@ CA
         </window>
         <customObject id="300" userLabel="miniAudicleVMMonitor" customClass="miniAudicleVMMonitor">
             <connections>
+                <outlet property="awesome_button" destination="bGE-G9-ZTM" id="IBQ-nl-0lP"/>
+                <outlet property="boring_button" destination="8Fs-gb-O0k" id="bSo-9f-abn"/>
                 <outlet property="controller" destination="331" id="333"/>
                 <outlet property="header_menu" destination="539" id="556"/>
                 <outlet property="panel" destination="262" id="302"/>
@@ -891,6 +935,7 @@ CA
                 <outlet property="shreds_text" destination="884" id="885"/>
                 <outlet property="table_menu" destination="557" id="564"/>
                 <outlet property="vm_toggle_button" destination="280" id="306"/>
+                <outlet property="wtf_button" destination="f6d-A4-E3M" id="LXd-PP-umq"/>
             </connections>
         </customObject>
         <customObject id="331" userLabel="miniAudicleController1" customClass="miniAudicleController">
@@ -921,11 +966,11 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="447" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="BdI-v0-Am4">
-                            <rect key="frame" x="0.0" y="0.0" width="447" height="320"/>
+                            <rect key="frame" x="0.0" y="0.0" width="432" height="320"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1008">
-                                    <rect key="frame" x="0.0" y="0.0" width="432" height="320"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="417" height="320"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="432" height="320"/>
@@ -973,21 +1018,21 @@ CA
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="304" y="252" width="450" height="350"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="433">
-                <rect key="frame" x="1" y="1" width="450" height="350"/>
+                <rect key="frame" x="0.0" y="0.0" width="450" height="350"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="434">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="gbL-lz-swd">
-                            <rect key="frame" x="0.0" y="0.0" width="450" height="350"/>
-                            <autoresizingMask key="autoresizingMask"/>
+                            <rect key="frame" x="0.0" y="0.0" width="435" height="350"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" findStyle="panel" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="435" customClass="miniAudicleShellTextView">
-                                    <rect key="frame" x="0.0" y="0.0" width="435" height="350"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="420" height="350"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="435" height="350"/>
@@ -1447,7 +1492,7 @@ Changes will not take effect until miniAudicle is restarted.
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" autosaveColumns="NO" headerView="1401" indentationPerLevel="16" autoresizesOutlineColumn="YES" outlineTableColumn="1412" id="1400">
-                                                        <rect key="frame" x="0.0" y="0.0" width="368" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="368" height="223"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1527,7 +1572,7 @@ Changes will not take effect until miniAudicle is restarted.
                             <tabViewItem label="Miscellaneous" identifier="" id="613">
                                 <view key="view" id="614">
                                     <rect key="frame" x="10" y="33" width="404" height="329"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button hidden="YES" id="618">
                                             <rect key="frame" x="244" y="60" width="142" height="18"/>
@@ -1746,7 +1791,7 @@ Changes will not take effect until miniAudicle is restarted.
                                             <rect key="frame" x="177" y="86" width="93" height="38"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="cellSize" width="93" height="18"/>
+                                            <size key="cellSize" width="72" height="18"/>
                                             <size key="intercellSpacing" width="4" height="2"/>
                                             <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="1474">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1904,7 +1949,7 @@ DQ
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <value key="minSize" type="size" width="400" height="400"/>
             <view key="contentView" id="902">
-                <rect key="frame" x="1" y="9" width="505" height="429"/>
+                <rect key="frame" x="0.0" y="0.0" width="505" height="429"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" id="909">
@@ -2043,8 +2088,8 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="447" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" autoresizesSubviews="NO" id="URm-cK-4sr">
-                            <rect key="frame" x="0.0" y="0.0" width="447" height="320"/>
-                            <autoresizingMask key="autoresizingMask"/>
+                            <rect key="frame" x="0.0" y="0.0" width="432" height="320"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <customView id="1006" customClass="mAConsoleMonitorView">
                                     <rect key="frame" x="0.0" y="0.0" width="1" height="1"/>
@@ -2061,7 +2106,7 @@ DQ
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1378">
-                            <rect key="frame" x="431" y="0.0" width="16" height="320"/>
+                            <rect key="frame" x="432" y="0.0" width="15" height="320"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
@@ -2076,7 +2121,7 @@ DQ
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <value key="minSize" type="size" width="283" height="208"/>
             <view key="contentView" id="1115">
-                <rect key="frame" x="1" y="9" width="624" height="495"/>
+                <rect key="frame" x="0.0" y="0.0" width="624" height="495"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="1116">
@@ -2084,10 +2129,10 @@ DQ
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="gJ8-GE-1nV">
                             <rect key="frame" x="1" y="17" width="582" height="411"/>
-                            <autoresizingMask key="autoresizingMask"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" headerView="1382" indentationPerLevel="16" autoresizesOutlineColumn="YES" outlineTableColumn="1118" id="1117">
-                                    <rect key="frame" x="0.0" y="0.0" width="582" height="19"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="582" height="411"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2190,7 +2235,7 @@ DQ
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="1142">
-                <rect key="frame" x="1" y="9" width="600" height="517"/>
+                <rect key="frame" x="0.0" y="0.0" width="600" height="517"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <openGLView useAuxiliaryDepthBufferStencil="NO" id="1161">
@@ -2216,9 +2261,9 @@ DQ
         </numberFormatter>
     </objects>
     <resources>
-        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSAddTemplate" width="8" height="8"/>
         <image name="NSApplicationIcon" width="128" height="128"/>
-        <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="NSRemoveTemplate" width="8" height="8"/>
         <image name="chugin" width="512" height="512"/>
     </resources>
 </document>

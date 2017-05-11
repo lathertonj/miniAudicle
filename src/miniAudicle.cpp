@@ -259,6 +259,18 @@ miniAudicle::miniAudicle()
     vm_options.num_outputs = 2;
     vm_options.enable_block = FALSE;
     
+    std::time_t rawtime;
+    std::tm* timeinfo;
+    char filename [128];
+
+    std::time(&rawtime);
+    timeinfo = std::localtime(&rawtime);
+
+    // TODO: mkdir if it doesn't exist
+    std::strftime(filename,128,"/usr/local/miniAudicle/logs/%Y-%m-%d-%H-%M-%S.csv",timeinfo);
+    plog::init(plog::info, filename);
+    LOG(plog::info) << "startup";
+    
     probe();
 }
 

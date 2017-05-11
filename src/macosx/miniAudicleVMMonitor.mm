@@ -86,6 +86,21 @@ static NSString * const remove_column_id = @"4";
     [removelast_button setBezelStyle:NSShadowlessSquareBezelStyle];
     [removelast_button setEnabled:NO];
     
+    // [wtf_button setTitle:@"WTF"];
+    [wtf_button setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSRegularControlSize]]];
+    //[wtf_button setBezelStyle:NSShadowlessSquareBezelStyle];
+    [wtf_button setEnabled:YES];
+    
+    // [awesome_button setTitle:@"Awesome!"];
+    [awesome_button setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSRegularControlSize]]];
+    //[awesome_button setBezelStyle:NSShadowlessSquareBezelStyle];
+    [awesome_button setEnabled:YES];
+    
+    // [boring_button setTitle:@"Boring.."];
+    [boring_button setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSRegularControlSize]]];
+    //[boring_button setBezelStyle:NSShadowlessSquareBezelStyle];
+    [boring_button setEnabled:YES];
+    
     docid = [controller miniAudicle]->allocate_document_id();
 }
 

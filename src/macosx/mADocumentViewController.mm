@@ -174,6 +174,8 @@ using namespace std;
 
 - (void)add:(id)sender
 {
+    LOG(plog::info) << "action: addShred";
+    
     [self handleArgumentText:argument_text];
     
     string result;
@@ -242,6 +244,8 @@ using namespace std;
 
 - (void)replace:(id)sender
 {
+    LOG(plog::info) << "action: replaceShred";
+
     [self handleArgumentText:argument_text];
     
     string result;
@@ -307,6 +311,8 @@ using namespace std;
 
 - (void)remove:(id)sender
 {
+    LOG(plog::info) << "action: removeShred";
+
     string result;
     t_CKUINT shred_id;
     
@@ -337,6 +343,8 @@ using namespace std;
 
 - (void)removeall:(id)sender
 {
+    LOG(plog::info) << "action: removeAll";
+    
     string result;
     if( !ma->removeall( docid, result ) )
     {
@@ -350,6 +358,8 @@ using namespace std;
 
 - (void)removelast:(id)sender
 {
+    LOG(plog::info) << "action: removeLast";
+    
     string result;
     if( !ma->removelast( docid, result ) )
     {
@@ -363,6 +373,8 @@ using namespace std;
 
 - (void)clearVM:(id)sender
 {
+    LOG(plog::info) << "action: clearVM";
+    
     string result;
     if( !ma->clearvm( docid, result ) )
     {

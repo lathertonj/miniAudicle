@@ -40,6 +40,9 @@ U.S.A.
 #include "RtAudio/RtAudio.h"
 #endif // __CHIP_MODE__
 
+#include <plog/Log.h>
+#include <ctime>
+
 #include <map>
 #include <string>
 #include <vector>

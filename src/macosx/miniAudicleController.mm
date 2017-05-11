@@ -289,6 +289,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)addDocument:(NSDocument *)doc
 {
+    LOG(plog::info) << "action: addDocument";
+    
     [(miniAudicleDocument *)doc setMiniAudicle:ma];
     [madv addObject:doc];
     
@@ -299,6 +301,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)removeDocument:(NSDocument *)_doc
 {
+    LOG(plog::info) << "action: removeDocument";
+
     miniAudicleDocument * doc = (miniAudicleDocument *)_doc;
     [super removeDocument:doc];
 
@@ -530,6 +534,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (IBAction)openDocumentInTab:(id)sender
 {
+    LOG(plog::info) << "action: openDocumentInTab";
+    
     _forceDocumentInWindow = NO;
     _forceDocumentInTab = YES;
     
@@ -551,6 +557,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (IBAction)newWindow:(id)sender
 {
+    LOG(plog::info) << "action: newWindow";
+    
     _forceDocumentInWindow = YES;
     _forceDocumentInTab = NO;
     
@@ -562,6 +570,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (IBAction)newTab:(id)sender
 {
+    LOG(plog::info) << "action: newTab";
+    
     _forceDocumentInWindow = NO;
     _forceDocumentInTab = YES;
     
@@ -589,6 +599,7 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 //-----------------------------------------------------------------------------
 - (void)addShred:(id)sender
 {
+    // don't plog here -- plog in add: since the main window directly uses that
     [[(id)[self currentDocument] viewController] add:sender];
 }
 
@@ -598,6 +609,7 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 //-----------------------------------------------------------------------------
 - (void)removeShred:(id)sender
 {
+    // don't plog here -- plog in remove: since the main window directly uses that
     [[(id)[self currentDocument] viewController] remove:sender];
 }
 
@@ -607,6 +619,7 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 //-----------------------------------------------------------------------------
 - (void)replaceShred:(id)sender
 {
+    // don't plog here -- plog in replace: since the main window directly uses that
     [[(id)[self currentDocument] viewController] replace:sender];
 }
 
@@ -616,6 +629,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 //-----------------------------------------------------------------------------
 - (void)addOpenDocuments:(id)sender
 {
+    LOG(plog::info) << "action: addOpenDocuments";
+    
     for(NSDocument * doc in madv)
     {
         [[(id)doc viewController] add:sender];
@@ -628,6 +643,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 //-----------------------------------------------------------------------------
 - (void)replaceOpenDocuments:(id)sender
 {
+    LOG(plog::info) << "action: replaceOpenDocuments";
+
     for(NSDocument * doc in madv)
     {
         [[(id)doc viewController] replace:sender];
@@ -640,6 +657,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 //-----------------------------------------------------------------------------
 - (void)removeOpenDocuments:(id)sender
 {
+    LOG(plog::info) << "action: removeOpenDocuments";
+    
     for(NSDocument * doc in madv)
     {
         [[(id)doc viewController] remove:sender];
@@ -652,6 +671,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 //-----------------------------------------------------------------------------
 - (void)removeAllShreds:(id)sender
 {
+    LOG(plog::info) << "action: removeAllShreds";
+    
     //    if( [self currentDocument] )
     //        [[self currentDocument] removeall:sender];
     //    else
@@ -663,12 +684,16 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)commentOut:(id)sender
 {
+    LOG(plog::info) << "action: commentOut";
+    
     if( [self currentDocument] )
         [[self currentDocument] commentOut:sender];
 }
 
 - (void)removeLastShred:(id)sender
 {
+    LOG(plog::info) << "action: removeLastShred";
+    
 //    if( [self currentDocument] )
 //        [[self currentDocument] removelast:sender];
 //    else
@@ -684,17 +709,23 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 //-----------------------------------------------------------------------------
 - (void)clearVM:(id)sender
 {
+    LOG(plog::info) << "action: clearVM";
+    
     string result;
     ma->clearvm( docid, result );
 }
 
 - (void)abortCurrentShred:(id)sender
 {
+    LOG(plog::info) << "action: abortCurrentShred";
+    
     ma->abort_current_shred();
 }
 
 - (void)setLogLevel:(id)sender
 {
+    LOG(plog::info) << "action: setLogLevel";
+    
     // uncheck the menu item of the original log state
     [[[sender menu] itemWithTag:( ma->get_log_level() + 100 )] setState:NSOffState];
     
@@ -705,19 +736,74 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
     ma->set_log_level( [sender tag] - 100 );
 }
 
+
+//-----------------------------------------------------------------------------
+// name: logWTF
+// desc: called by the GUI.  connected to the "WTF" button
+//-----------------------------------------------------------------------------
+- (IBAction)logWTF:(id)sender {
+    LOG(plog::info) << "emotion: wtf";
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"You are feeling WTF."];
+    [alert setInformativeText:@"And I apologize for that."];
+    //[alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:@"Ok"];
+    [alert runModal];
+}
+
+
+//-----------------------------------------------------------------------------
+// name: logAwesome
+// desc: called by the GUI.  connected to the "WTF" button
+//-----------------------------------------------------------------------------
+- (IBAction)logAwesome:(id)sender {
+    LOG(plog::info) << "emotion: awesome";
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"You are feeling awesome!"];
+    [alert setInformativeText:@"That's great! Keep it up!!"];
+    //[alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:@"Yeah!"];
+    [alert runModal];
+}
+
+
+//-----------------------------------------------------------------------------
+// name: logBoring
+// desc: called by the GUI.  connected to the "WTF" button
+//-----------------------------------------------------------------------------
+- (IBAction)logBoring:(id)sender {
+    LOG(plog::info) << "emotion: bored";
+
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"You are feeling bored."];
+    [alert setInformativeText:@"And I apologize for that."];
+    //[alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:@"Ok"];
+    [alert runModal];
+}
+
+
 - (void)openMiniAudicleWebsite:(id)sender
 {
+    LOG(plog::info) << "action: openMiniAudicleWebsite";
+    
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://audicle.cs.princeton.edu/mini/mac/doc/"]];
 }
 
 - (void)saveACopyAs:(id)sender
 {
+    LOG(plog::info) << "action: saveACopyAs";
+    
     if( [self currentDocument] )
         [[self currentDocument] saveDocumentTo:sender];
 }
 
 - (void)saveBackup:(id)sender
 {
+    LOG(plog::info) << "action: saveBackup";
+    
     if( [self currentDocument] )
         [[self currentDocument] saveBackup:sender];
 }
@@ -733,6 +819,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)hideToolbar:(id)sender
 {
+    LOG(plog::info) << "action: hideToolbar";
+    
     miniAudicleDocument * doc = [self currentDocument];
     if( !doc )
         return;
@@ -746,6 +834,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)hideAllToolbars:(id)sender
 {
+    LOG(plog::info) << "action: hideAllToolbars";
+    
     if( [madv count] == 0 )
         return;
     
@@ -769,6 +859,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)hideArguments:(id)sender
 {
+    LOG(plog::info) << "action: hideArguments";
+    
     miniAudicleDocument * doc = [self currentDocument];
     if( !doc )
         return;
@@ -782,6 +874,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)hideAllArguments:(id)sender
 {
+    LOG(plog::info) << "action: hideAllArguments";
+    
     if( [madv count] == 0 )
         return;
     
@@ -805,6 +899,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)hideLineNumbers:(id)sender
 {
+    LOG(plog::info) << "action: hideLineNumbers";
+    
     miniAudicleDocument * doc = [self currentDocument];
     if( !doc )
         return;
@@ -818,6 +914,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)hideAllLineNumbers:(id)sender
 {
+    LOG(plog::info) << "action: hideAllLineNumbers";
+    
     if( [madv count] == 0 )
         return;
     
@@ -841,6 +939,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)hideStatusBar:(id)sender
 {
+    LOG(plog::info) << "action: hideStatusBar";
+    
     miniAudicleDocument * doc = [self currentDocument];
     if( !doc )
         return;
@@ -854,6 +954,8 @@ const char* const MultiWindowDocumentControllerCloseAllContext = "com.samuelcart
 
 - (void)hideAllStatusBars:(id)sender
 {
+    LOG(plog::info) << "action: hideAllStatusBars";
+    
     if( [madv count] == 0 )
         return;
     
@@ -955,6 +1057,12 @@ const static size_t num_default_tile_dimensions = sizeof( default_tile_dimension
 
 - (void)toggleVM:(id)sender
 {
+    if( vm_on ) {
+        LOG(plog::info) << "action: toggleVMOff";
+    } else {
+        LOG(plog::info) << "action: toggleVMOn";
+    }
+    
     if( vm_on )
     {
 //        [madv makeObjectsPerformSelector:@selector(vm_off)];
@@ -1030,11 +1138,15 @@ const static size_t num_default_tile_dimensions = sizeof( default_tile_dimension
 
 - (IBAction)recordSession:(id)sender
 {
+    LOG(plog::info) << "action: recordSession";
+    
     [[m_recordSessionController window] makeKeyAndOrderFront:sender];
 }
 
 - (IBAction)openExample:(id)sender
 {
+    LOG(plog::info) << "action: openExample";
+    
     [[self.exampleBrowser window] makeKeyAndOrderFront:sender];
 }
 

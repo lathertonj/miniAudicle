@@ -68,8 +68,12 @@ struct mAShredOptimizationMetadata
     NSButton * removeall_button;
     NSButton * removelast_button;
     NSButton * vm_toggle_button;
+    NSButton * wtf_button_;
     NSMenu * header_menu;
-
+    IBOutlet NSButton * wtf_button;
+    IBOutlet NSButton * awesome_button;
+    IBOutlet NSButton * boring_button;
+    
     NSTimer * timer;
 
     NSTableColumn * shred_column;
